@@ -15,12 +15,20 @@
         <div class="start-button"><div class="startb">Start</div></div>
     </section>
 
+    <section id="starting-player" hidden>
+        <h2>Who plays first?</h2>
+        <div id="choices">
+            <div class="choice">X</div>
+            <div class="choice">O</div>
+        </div>
+    </section>
+
     <section id="form" hidden>
         <form>
             <fieldset>
                 <legend>Players name</legend>
-                <input type="text" name="player-x" placeholder="Enter name for player X">
-                <input type="text" name="player-o" placeholder="Enter name for player O">
+                <input type="text" id="player-x" name="player-x" placeholder="Enter name for player X">
+                <input type="text" id="player-o" name="player-o" placeholder="Enter name for player O">
                 <div class="continue"><div>Continue</div></div>
             </fieldset>
         </form>

@@ -32,6 +32,27 @@ body {
 
 }
 
+h2 {
+    font-size: 2rem;
+    margin-bottom: 55px;
+}
+
+#choices {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.choice {
+    font-size: 5rem;
+    border: 2px solid black;
+    height: auto;
+    width: 40%;
+    background-color: white;
+}
+
 fieldset {
     display: flex;
     flex-direction: column;
