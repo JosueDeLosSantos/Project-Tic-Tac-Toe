@@ -1,8 +1,25 @@
 
 
 
+const welcome = document.querySelector('#welcome')
+const form = document.querySelector('#form')
+const continueb = document.querySelector('.continue')
 const clicker = document.querySelectorAll('.box')
-const data = document.querySelectorAll('[data-box-number]')
+const start = document.querySelector('.startb')
+const gameboardSection = document.querySelector('#gameboard')
+
+
+
+start.addEventListener('click', function formShow(){
+  welcome.hidden = true
+  form.hidden = false
+})
+
+continueb.addEventListener('click', function formShow(){
+  form.hidden = true
+  gameboardSection.hidden = false
+})
+
 
 
 //Players factory function

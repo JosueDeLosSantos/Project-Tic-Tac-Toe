@@ -10,17 +10,35 @@
 </head>
 <body>
 
-   <div class="container">
-    <div id="0" class="box"></div>
-    <div id="1" class="box"></div>
-    <div id="2" class="box"></div>
-    <div id="3" class="box"></div>
-    <div id="4" class="box"></div>
-    <div id="5" class="box"></div>
-    <div id="6" class="box"></div>
-    <div id="7" class="box"></div>
-    <div id="8" class="box"></div>
-   </div>
+    <section id="welcome">
+        <h1>Welcome to the <span class="game-name">Tic-Tac-Toe</span> Game</h1>
+        <div class="start-button"><div class="startb">Start</div></div>
+    </section>
+
+    <section id="form" hidden>
+        <form>
+            <fieldset>
+                <legend>Players name</legend>
+                <input type="text" name="player-x" placeholder="Enter name for player X">
+                <input type="text" name="player-o" placeholder="Enter name for player O">
+                <div class="continue"><div>Continue</div></div>
+            </fieldset>
+        </form>
+    </section>
+
+   <section id="gameboard" hidden>
+       <div class="container">
+        <div id="0" class="box"></div>
+        <div id="1" class="box"></div>
+        <div id="2" class="box"></div>
+        <div id="3" class="box"></div>
+        <div id="4" class="box"></div>
+        <div id="5" class="box"></div>
+        <div id="6" class="box"></div>
+        <div id="7" class="box"></div>
+        <div id="8" class="box"></div>
+       </div>
+   </section>
     
 </body>
 </html>
