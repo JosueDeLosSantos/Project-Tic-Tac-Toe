@@ -1,6 +1,6 @@
 
+/* Tic-Tac-Toe GAME*/
 
-// const body = document.querySelector('body')
 const welcome = document.querySelector('#welcome')
 const form = document.querySelector('#form')
 const continueb = document.querySelector('.continue')
@@ -11,6 +11,9 @@ const startingPlayers = document.querySelector('#starting-player')
 const choice = document.querySelectorAll('.choice')
 const playerX = document.querySelector('#player-x')
 const playerO = document.querySelector('#player-o')
+const restartb = document.querySelector('.restartb')
+const restart = document.querySelector('#restart')
+const finalMessage = document.querySelector('.finalMessage')
 
 
 
@@ -19,13 +22,6 @@ start.addEventListener('click', function showChoices(){
   form.hidden = false
 })
 
-choice.forEach(choice => choice.addEventListener('click', function showForm(e){
-  e.target.parentNode.parentNode.dataset.choice = e.target.innerText
-  startingPlayers.hidden = true
-  gameboardSection.hidden = false
-}))
-
-
 continueb.addEventListener('click', function showBoard(e){
   e.target.parentNode.parentNode.children[1].dataset.value = playerX.value
   e.target.parentNode.parentNode.children[2].dataset.value = playerO.value
@@ -33,10 +29,15 @@ continueb.addEventListener('click', function showBoard(e){
   startingPlayers.hidden = false
 })
 
+choice.forEach(choice => choice.addEventListener('click', function showForm(e){
+  e.target.parentNode.parentNode.dataset.choice = e.target.innerText
+  startingPlayers.hidden = true
+  gameboardSection.hidden = false
+}))
+
 //Players factory function
 const playerFactory = (marker) => {
-  const announcement = (arg) => console.log(arg + ' is the winner!')
-  return{marker, announcement}
+  return{marker}
 }
 
 const player1Name = () => {return window.document.body.children[2].children[0].children[0].children[1].dataset.value}
@@ -66,23 +67,89 @@ const displayController = (() => {
 
    const controller = (board) => {
     
-    if (board[0] =='x' && board[1] =='x' && board[2] =='x') console.log(player1Name() + ' is the winner')
-    if (board[3] =='x' && board[4] =='x' && board[5] =='x') console.log(player1Name() + ' is the winner')
-    if (board[6] =='x' && board[7] =='x' && board[8] =='x') console.log(player1Name() + ' is the winner')
-    if (board[0] =='x' && board[3] =='x' && board[6] =='x') console.log(player1Name() + ' is the winner')
-    if (board[1] =='x' && board[4] =='x' && board[7] =='x') console.log(player1Name() + ' is the winner')
-    if (board[2] =='x' && board[5] =='x' && board[8] =='x') console.log(player1Name() + ' is the winner')
-    if (board[0] =='x' && board[4] =='x' && board[8] =='x') console.log(player1Name() + ' is the winner')
-    if (board[2] =='x' && board[4] =='x' && board[6] =='x') console.log(player1Name() + ' is the winner')
+    if (board[0] =='x' && board[1] =='x' && board[2] =='x') {
+      gameboardSection.hidden = true
+      restart.hidden = false
+      finalMessage.children[0].innerText = `${player1Name()}` + ' is the winner'
+      
+    }
+    if (board[3] =='x' && board[4] =='x' && board[5] =='x') {
+      gameboardSection.hidden = true
+      restart.hidden = false
+      finalMessage.children[0].innerText = `${player1Name()}` + ' is the winner'
+      }
+    if (board[6] =='x' && board[7] =='x' && board[8] =='x') {
+      gameboardSection.hidden = true
+      restart.hidden = false
+      finalMessage.children[0].innerText = `${player1Name()}` + ' is the winner'
+      }
+    if (board[0] =='x' && board[3] =='x' && board[6] =='x') {
+      gameboardSection.hidden = true
+      restart.hidden = false
+      finalMessage.children[0].innerText = `${player1Name()}` + ' is the winner'
+      }
+    if (board[1] =='x' && board[4] =='x' && board[7] =='x') {
+      gameboardSection.hidden = true
+      restart.hidden = false
+      finalMessage.children[0].innerText = `${player1Name()}` + ' is the winner'
+      }
+    if (board[2] =='x' && board[5] =='x' && board[8] =='x') {
+      gameboardSection.hidden = true
+      restart.hidden = false
+      finalMessage.children[0].innerText = `${player1Name()}` + ' is the winner'
+      }
+    if (board[0] =='x' && board[4] =='x' && board[8] =='x') {
+      gameboardSection.hidden = true
+      restart.hidden = false
+      finalMessage.children[0].innerText = `${player1Name()}` + ' is the winner'
+      }
+    if (board[2] =='x' && board[4] =='x' && board[6] =='x') {
+      gameboardSection.hidden = true
+      restart.hidden = false
+      finalMessage.children[0].innerText = `${player1Name()}` + ' is the winner'
+      }
 
-    if (board[0] =='o' && board[1] =='o' && board[2] =='o') console.log(player2Name() + ' is the winner')
-    if (board[3] =='o' && board[4] =='o' && board[5] =='o') console.log(player2Name() + ' is the winner')
-    if (board[6] =='o' && board[7] =='o' && board[8] =='o') console.log(player2Name() + ' is the winner')
-    if (board[0] =='o' && board[3] =='o' && board[6] =='o') console.log(player2Name() + ' is the winner')
-    if (board[1] =='o' && board[4] =='o' && board[7] =='o') console.log(player2Name() + ' is the winner')
-    if (board[2] =='o' && board[5] =='o' && board[8] =='o') console.log(player2Name() + ' is the winner')
-    if (board[0] =='o' && board[4] =='o' && board[8] =='o') console.log(player2Name() + ' is the winner')
-    if (board[2] =='o' && board[4] =='o' && board[6] =='o') console.log(player2Name() + ' is the winner')
+
+    if (board[0] =='o' && board[1] =='o' && board[2] =='o') {
+      gameboardSection.hidden = true
+      restart.hidden = false
+      finalMessage.children[0].innerText = `${player2Name()}` + ' is the winner'
+      }
+    if (board[3] =='o' && board[4] =='o' && board[5] =='o') {
+      gameboardSection.hidden = true
+      restart.hidden = false
+      finalMessage.children[0].innerText = `${player2Name()}` + ' is the winner'
+      }
+    if (board[6] =='o' && board[7] =='o' && board[8] =='o') {
+      gameboardSection.hidden = true
+      restart.hidden = false
+      finalMessage.children[0].innerText = `${player2Name()}` + ' is the winner'
+      }
+    if (board[0] =='o' && board[3] =='o' && board[6] =='o') {
+      gameboardSection.hidden = true
+      restart.hidden = false
+      finalMessage.children[0].innerText = `${player2Name()}` + ' is the winner'
+      }
+    if (board[1] =='o' && board[4] =='o' && board[7] =='o') {
+      gameboardSection.hidden = true
+      restart.hidden = false
+      finalMessage.children[0].innerText = `${player2Name()}` + ' is the winner'
+      }
+    if (board[2] =='o' && board[5] =='o' && board[8] =='o') {
+      gameboardSection.hidden = true
+      restart.hidden = false
+      finalMessage.children[0].innerText = `${player2Name()}` + ' is the winner'
+      }
+    if (board[0] =='o' && board[4] =='o' && board[8] =='o') {
+      gameboardSection.hidden = true
+      restart.hidden = false
+      finalMessage.children[0].innerText = `${player2Name()}` + ' is the winner'
+      }
+    if (board[2] =='o' && board[4] =='o' && board[6] =='o') {
+      gameboardSection.hidden = true
+      restart.hidden = false
+      finalMessage.children[0].innerText = `${player2Name()}` + ' is the winner'
+      }
   }
 
   return {controller}
@@ -92,12 +159,13 @@ const displayController = (() => {
 let toggle = 0
 
 function show(e) {
-
+  //the line below targets the starting player marker
   const marker = e.target.parentNode.parentNode.parentNode.children[1].dataset.choice
 
   if (marker == 'X'){
 
     let boxId = e.target.id
+    //the line below keeps players from playing in spots that are already taken
     if (e.target.hasAttribute('data-marker')) return
     toggle++
 
@@ -123,6 +191,7 @@ function show(e) {
   if (marker == 'O'){
 
     let boxId = e.target.id
+    //the line below keeps players from playing in spots that are already taken
     if (e.target.hasAttribute('data-marker')) return
     toggle++
 
@@ -147,7 +216,9 @@ function show(e) {
 
 clicker.forEach(element => element.addEventListener('click', show))
 
-
+restartb.addEventListener('click', function showRestart(){
+  location.reload()
+})
 
 
 
