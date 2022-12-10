@@ -2,13 +2,27 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+   
+}
+
+:root {
+    --buttonbgcolor: hsl(0, 0%, 80%);
+    --buttonbcolor: hsl(0, 0%, 50%);
 }
 
 body {
+    background-image: url(tictactoebg.png);
     text-align: center;
-    margin-top: 50px;
     box-sizing: border-box;
+    margin-top: 75px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
+/* .bgimage {
+    width: 100vh;
+    height: 100vh;
+    opacity: 0.3;
+} */
 
 .game-name {
     font-style: italic;
@@ -16,25 +30,23 @@ body {
 
 .start-button, .restartb {
     height: 40px;
-    width: 80px;
+    max-width: 140px;
     margin: 50px auto 0 auto;
     padding: 2.5px 5px 5px 5px;
     font-size: 1.5rem;
-    border: none;
-    border-bottom: 5px solid hsl(39, 50%, 50%);
-    border-radius: 15px;
-    background-color: hsl(39, 100%, 50%);
+    border: 1px solid var(--buttonbcolor);
+    border-radius: 10px;
+    background-color: var(--buttonbgcolor);
     box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
     font-style: italic;
-
 }
 
-h2 {
+h2, h1 {
     font-size: 2rem;
-    margin-bottom: 55px;
+    margin-bottom: 100px;
 }
 
 #choices {
@@ -63,12 +75,33 @@ fieldset {
     margin: 0 auto 0 auto;
 }
 
+input[type=text] {
+    height: 40px;
+    font-size: 1.1rem;
+    border: 1px solid var(--buttonbcolor);
+    color: hsl(0, 0%, 25%);
+    border-radius: 5px;
+    padding: 0 10px 0 10px;
+}
+
+input[type=text]:focus-visible {
+    outline: none;
+    border: 1px solid black;
+    font-family: inherit;
+}
+
+legend {
+    font-size: 2rem;
+    font-family: inherit;
+}
+
 .continue {
-    background-color: hsl(215, 100%, 50%);
-    color: white;
-    width: 80px;
-    height: 20px;
+    background-color: var(--buttonbgcolor);
+    border: 1px solid var(--buttonbcolor);
+    padding: 2.5px 10px 5px 10px;
+    border-radius: 10px;
     margin: 0 auto 0 auto;
+    font-size: 1.5rem;
 }
 
 .container {
@@ -86,7 +119,7 @@ fieldset {
 .box {
     width: auto;
     height: auto;
-    background-color: white;
+    background-color: hsl(0, 0%, 100%);
     border: none;
     color: black;
     font-weight: bolder;
@@ -94,5 +127,11 @@ fieldset {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.draw > p {
+    margin-top: 50px;
+    font-size: 1.7rem;
+    font-weight: 600;
 }
 
